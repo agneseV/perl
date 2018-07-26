@@ -6,7 +6,7 @@
 use strict;
 use warnings;
 
-my @FILES = <$ARGV[0]>; #file path and pattern matching, ex: /proj/sllstore2017034/nobackup/work/agnese/Scand_wolf/SNVs/ENTIRE_MHC/Scand_wolf.chr.12.1.10000000.filtered.thin10000.pop1.*.1000.out
+my @FILES = <$ARGV[0]>; #file path and pattern matching, ex: /agnese/Scand_wolf/Scand_wolf.chr.12.1.10000000.filtered.thin10000.pop1.*.1000.out
 open (FH2, '>', $ARGV[1]) or die "Can't open $ARGV[1]: $!\n";
 
 foreach my $file (@FILES) {
