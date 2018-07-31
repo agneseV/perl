@@ -13,14 +13,15 @@ while (<FH>) {
 	if ($_ =~ /^s/ && $_ =~ /\+/){
 		#print STDOUT $_;
 		chomp $_;
-		my @data = split(/[\ \t]/,$_);
+		my @data = split(/[\s\t]+/,$_);
+		#print STDOUT "$data[2]\t$data[3]\n";
 		my $end=$data[2]+$data[3];
 		my $start=$data[2];
 		print FH2 "$data[1]\t$start\t$end\n";
     	}
     elsif ($_ =~ /^s/ && $_ =~ /\-/){
 		chomp $_;
-		my @data = split(/[\ \t]/,$_);
+		my @data = split(/[\s\t]+/,$_);
 		my $end=$data[5]-$data[2];
 		my $start=$data[5]-$data[2]-$data[3];
 		print FH2 "$data[1]\t$start\t$end\n";
